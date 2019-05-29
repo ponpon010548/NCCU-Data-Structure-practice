@@ -17,7 +17,7 @@ struct node {
 };
 typedef struct node N;
 struct List{
-    N* head;   //List¤¤²Ä¤@­ÓNodeªºAddr
+    N* head;   //Listä¸­ç¬¬ä¸€å€‹Nodeçš„Addr
     N* tail;   //the address of the last node of the list
 };
 
@@ -103,10 +103,10 @@ N* CreateListWithCycle(int n1, int n2){
         Push_back(&l, i);
     }
     N* nodeaddr = l.head ;
-    for(int i = 1; i < n1 ; i++){      //linear search §ä¨ì²Än1­ÓNode
+    for(int i = 1; i < n1 ; i++){      //linear search æ‰¾åˆ°ç¬¬n1å€‹Node
         nodeaddr = nodeaddr -> nextNodeAddr;
     }
-    l.tail -> nextNodeAddr = nodeaddr;  //­ì¥»«ü¦VNULL§ï¦¨«ü¨ì²Än1­ÓNode
+    l.tail -> nextNodeAddr = nodeaddr;  //åŸæœ¬æŒ‡å‘NULLæ”¹æˆæŒ‡åˆ°ç¬¬n1å€‹Node
     return l.head;
 }
 int HasCycle(N* head){
